@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Header from "../components/Header";
+import SideBar from "../components/SideBar";
 
 const Main = () => {
   return (
-    <div>Hello from Header</div>
-  )
-}
+    <>
+      <Header />
+      <SideBar />
+    </>
+  );
+};
 
-export default Main
+export default Main;
