@@ -10,11 +10,20 @@ import { gmailLogo } from "../constants/constant";
 const StyledAppBar = styled(AppBar)({
   background: "#F5F5F5",
   boxShadow: "none",
-  borderRadius: 8,
 });
 const SearchWraper = styled(Box)({
   background: "#EAF1FB",
   marginLeft: 80,
+  borderRadius: 8,
+  minWidth: 690,
+  maxWidth: 720,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  padding: "0px 10px",
+  "& > div": {
+    width: "100%",
+  },
 });
 const Header = () => {
   return (
