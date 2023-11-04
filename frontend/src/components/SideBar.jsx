@@ -1,6 +1,6 @@
 import React from "react";
 import { Drawer, styled } from "@mui/material";
-
+import SideBarContent from "./SideBarContent";
 const SideBar = () => {
   return (
     <Drawer
@@ -21,7 +21,7 @@ const SideBar = () => {
         },
       }}
     >
-      hello
+      <SideBarContent />
     </Drawer>
   );
 };
