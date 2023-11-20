@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Button, styled } from "@mui/material";
+import { Box, Button, List, ListItem, styled } from "@mui/material";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
+import { SIDEBAR_DATA } from "../config/sidebar.config";
 
 const ComposedButton = styled(Button)({
   background: "#c2e7ff",
@@ -8,20 +9,25 @@ const ComposedButton = styled(Button)({
   padding: 15,
   borderRadius: 16,
   minWidth: 145,
-  textTransform:"none",
+  textTransform: "none",
 });
 
 const SideBarContent = () => {
   return (
     <>
       <Box>
-        <Box>
-          <ComposedButton>
-            <CreateOutlinedIcon />
-            Compose
-          </ComposedButton>
-        </Box>
-        <Box></Box>
+        <ComposedButton>
+          <CreateOutlinedIcon />
+          Compose
+        </ComposedButton>
+        <List>
+          {SIDEBAR_DATA.map((data) => (
+            <ListItem>
+              <data.icon />
+              {data.title}
+            </ListItem>
+          ))}
+        </List>
       </Box>
     </>
   );
