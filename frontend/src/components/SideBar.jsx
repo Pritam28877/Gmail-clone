@@ -1,11 +1,11 @@
 import React from "react";
 import { Drawer, styled } from "@mui/material";
 import SideBarContent from "./SideBarContent";
-const SideBar = () => {
+const SideBar = ({ open }) => {
   return (
     <Drawer
       anchor="left"
-      open={true}
+      open={open}
       hideBackdrop={true}
       ModalProps={{ keepMounted: true }}
       variant="persistent"

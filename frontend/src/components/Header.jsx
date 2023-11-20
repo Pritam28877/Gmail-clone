@@ -46,7 +46,7 @@ const Header = ({ taggleDrawer }) => {
     <>
       <StyledAppBar position="static">
         <Toolbar>
-          <MenuIcon color="action" onclick={taggleDrawer} />
+          <MenuIcon color="action" onClick={taggleDrawer} />
           <img
             src={gmailLogo}
             alt="gmail logo"
