@@ -41,12 +41,12 @@ const OptionsWraper = styled(Box)({
   },
 });
 
-const Header = () => {
+const Header = ({ taggleDrawer }) => {
   return (
     <>
       <StyledAppBar position="static">
         <Toolbar>
-          <MenuIcon color="action" />
+          <MenuIcon color="action" onclick={taggleDrawer} />
           <img
             src={gmailLogo}
             alt="gmail logo"
