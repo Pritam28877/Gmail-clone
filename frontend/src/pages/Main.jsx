@@ -8,7 +8,6 @@ const Main = () => {
   const taggleDrawer = () => {
     setOpen((prevState) => !prevState);
   };
-  console.log(open);
   return (
     <>
       <Header taggleDrawer={taggleDrawer} />
