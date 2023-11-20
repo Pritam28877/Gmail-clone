@@ -12,10 +12,22 @@ const ComposedButton = styled(Button)({
   textTransform: "none",
 });
 
+const Container = styled(Box)({
+  padding: 8,
+  "& > ul": {
+    padding: "10px 0 0 5px",
+    fontSize: 14,
+    fontWeight: 500,
+    cursor: "pointer",
+  },
+  "& > ul > li > svg": {
+    marginRight: 10,
+  },
+});
 const SideBarContent = () => {
   return (
     <>
-      <Box>
+      <Container>
         <ComposedButton>
           <CreateOutlinedIcon />
           Compose
@@ -23,12 +35,12 @@ const SideBarContent = () => {
         <List>
           {SIDEBAR_DATA.map((data) => (
             <ListItem>
-              <data.icon />
+              <data.icon fontSize="small" />
               {data.title}
             </ListItem>
           ))}
         </List>
-      </Box>
+      </Container>
     </>
   );
 };
