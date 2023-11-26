@@ -57,6 +57,14 @@ const ComposeMail = () => {
     padding: 10px 15px;
     align-items: center;
   `;
+  const SendButton = styled(Button)`
+    background: #0b57d0;
+    color: #fff;
+    font-weight: 500;
+    text-transform: none;
+    border-radius: 18px;
+    width: 100px;
+  `;
   return (
     <>
       <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
@@ -74,7 +82,7 @@ const ComposeMail = () => {
           sx={{ "& .MuiOutlinedInput-notchedOutline": { border: "none" } }}
         />
         <Footer>
-          <Button>Send</Button>
+          <SendButton>Send</SendButton>
           <DeleteOutline />
         </Footer>
       </Dialog>
