@@ -51,9 +51,12 @@ const ComposeMail = () => {
     },
   });
 
-  const Footer = styled(Box)({
-    
-  });
+  const Footer = styled(Box)`
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
+  `;
   return (
     <>
       <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
