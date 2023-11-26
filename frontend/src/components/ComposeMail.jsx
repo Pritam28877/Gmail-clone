@@ -65,12 +65,6 @@ const SendButton = styled(Button)`
 `;
 
 const ComposeMail = ({ openDialog, setOpenDialog }) => {
-  const config = {
-    Host: "smtp.elasticemail.com",
-    Username: "gsrdgsdg@yopmail.com",
-    Password: "F76AF9A6C7719EAE23627EE70D28555BDFA0",
-    Port: 2525,
-  };
   const closeComposeMail = (e) => {
     setOpenDialog(false);
     e.preventDefault();
@@ -78,13 +72,19 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
   const sendMail = (e) => {
     e.preventDefault();
     if (window.Email) {
+      console.log("Email", window.Email);
       window.Email.send({
-        ...config,
+        Username: "dragon@yopmail.com",
+        Password: "D858A74D90BFFD85E78890482C0551A8097B",
+        Host: "smtp.elasticemail.com",
+        Port: 2525,
         From: "growupdiscord@gmail.com",
         To: "growupdiscord@gmail.com",
-        Subject: "hi",
-        Body: "hi",
-      }).then((message) => alert(message));
+        Subject: "This is the subject",
+        Body: "And this is the body",
+      }).then((message) => {
+        alert(message);
+      });
     }
   };
   return (
