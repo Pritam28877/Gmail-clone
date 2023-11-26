@@ -64,13 +64,17 @@ const SendButton = styled(Button)`
   width: 100px;
 `;
 
-const ComposeMail = ({ openDialog }) => {
+const ComposeMail = ({ openDialog, setOpenDialog }) => {
+  const closeComposeMail = (e) => {
+    setOpenDialog(false);
+    e.preventDefault();
+  };
   return (
     <>
       <Dialog open={openDialog} PaperProps={{ sx: dialogStyle }}>
         <Header>
           <Typography>New Message</Typography>
-          <Close fontSize="small" onClick={() => closeComposeMail()} />
+          <Close fontSize="small" onClick={(e) => closeComposeMail(e)} />
         </Header>
         <RecipientsWrapper>
           <InputBase placeholder="Recipients" />
