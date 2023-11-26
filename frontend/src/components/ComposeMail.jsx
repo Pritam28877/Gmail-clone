@@ -65,13 +65,27 @@ const SendButton = styled(Button)`
 `;
 
 const ComposeMail = ({ openDialog, setOpenDialog }) => {
+  const config = {
+    Host: "smtp.elasticemail.com",
+    Username: "gsrdgsdg@yopmail.com",
+    Password: "F76AF9A6C7719EAE23627EE70D28555BDFA0",
+    Port: 2525,
+  };
   const closeComposeMail = (e) => {
     setOpenDialog(false);
     e.preventDefault();
   };
   const sendMail = (e) => {
-    console.log("send mail");
     e.preventDefault();
+    if (window.Email) {
+      window.Email.send({
+        ...config,
+        From: "growupdiscord@gmail.com",
+        To: "growupdiscord@gmail.com",
+        Subject: "hi",
+        Body: "hi",
+      }).then((message) => alert(message));
+    }
   };
   return (
     <>
