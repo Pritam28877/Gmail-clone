@@ -1,5 +1,13 @@
 import React from "react";
-import { Dialog, Box, Typography, styled, InputBase } from "@mui/material";
+import {
+  Dialog,
+  Box,
+  Typography,
+  styled,
+  InputBase,
+  TextField,
+  Button,
+} from "@mui/material";
 import { Close, DeleteOutline } from "@mui/icons-material";
 
 const ComposeMail = () => {
@@ -42,6 +50,10 @@ const ComposeMail = () => {
       },
     },
   });
+
+  const Footer = styled(Box)({
+    
+  });
   return (
     <>
       <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
@@ -53,8 +65,15 @@ const ComposeMail = () => {
           <InputBase placeholder="Recipients" />
           <InputBase placeholder="Subject" />
         </RecipientsWrapper>
-        <Box>TextAraa</Box>
-        <Box></Box>
+        <TextField
+          multiline
+          rows={20}
+          sx={{ "& .MuiOutlinedInput-notchedOutline": { border: "none" } }}
+        />
+        <Footer>
+          <Button>Send</Button>
+          <DeleteOutline />
+        </Footer>
       </Dialog>
     </>
   );
