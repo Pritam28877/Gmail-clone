@@ -69,6 +69,10 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
     setOpenDialog(false);
     e.preventDefault();
   };
+  const sendMail = (e) => {
+    console.log("send mail");
+    e.preventDefault();
+  };
   return (
     <>
       <Dialog open={openDialog} PaperProps={{ sx: dialogStyle }}>
@@ -86,8 +90,11 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
           sx={{ "& .MuiOutlinedInput-notchedOutline": { border: "none" } }}
         />
         <Footer>
-          <SendButton>Send</SendButton>
-          <DeleteOutline />
+          <SendButton onClick={(e) => sendMail(e)}>Send</SendButton>
+          <DeleteOutline
+            sx={{ cursor: "pointer" }}
+            onClick={() => setOpenDialog(false)}
+          />
         </Footer>
       </Dialog>
     </>
