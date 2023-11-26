@@ -81,9 +81,9 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
       window.Email.send({
         ...config,
         From: "growupdiscord@gmail.com",
-        To: "dpritam285@gmail.com",
-        Subject: "hfdhxghtxfnfh",
-        Body: "hdxhsxdhxdh",
+        To: data.to,
+        Subject: data.subject,
+        Body: data.body,
       }).then((message) => alert(message));
     }
   };
