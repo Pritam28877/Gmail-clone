@@ -65,27 +65,29 @@ const SendButton = styled(Button)`
 `;
 
 const ComposeMail = ({ openDialog, setOpenDialog }) => {
+  const config = {
+    Username: "growupdiscord@gmail.com",
+    Password: "720FCA530DE8600D061E49ACD29AD299687A",
+    Host: "smtp25.elasticemail.com",
+    Port: 587,
+  };
+
+  const sendMail = async (e) => {
+    e.preventDefault();
+
+    if (window.Email) {
+      window.Email.send({
+        ...config,
+        From: "growupdiscord@gmail.com",
+        To: "growupdiscord@gmail.com",
+        Subject: "hfdhxghtxfnfh",
+        Body: "hdxhsxdhxdh",
+      }).then((message) => alert(message));
+    }
+  };
   const closeComposeMail = (e) => {
     setOpenDialog(false);
     e.preventDefault();
-  };
-  const sendMail = (e) => {
-    e.preventDefault();
-    if (window.Email) {
-      console.log("Email", window.Email);
-      window.Email.send({
-        Username: "dragon@yopmail.com",
-        Password: "D858A74D90BFFD85E78890482C0551A8097B",
-        Host: "smtp.elasticemail.com",
-        Port: 2525,
-        From: "growupdiscord@gmail.com",
-        To: "growupdiscord@gmail.com",
-        Subject: "This is the subject",
-        Body: "And this is the body",
-      }).then((message) => {
-        alert(message);
-      });
-    }
   };
   return (
     <>
