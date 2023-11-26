@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   Dialog,
   Box,
@@ -65,6 +66,7 @@ const SendButton = styled(Button)`
 `;
 
 const ComposeMail = ({ openDialog, setOpenDialog }) => {
+  const [data, setData] = useState({});
   const config = {
     Username: "growupdiscord@gmail.com",
     Password: "720FCA530DE8600D061E49ACD29AD299687A",
@@ -79,7 +81,7 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
       window.Email.send({
         ...config,
         From: "growupdiscord@gmail.com",
-        To: "growupdiscord@gmail.com",
+        To: "dpritam285@gmail.com",
         Subject: "hfdhxghtxfnfh",
         Body: "hdxhsxdhxdh",
       }).then((message) => alert(message));
@@ -89,6 +91,9 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
     setOpenDialog(false);
     e.preventDefault();
   };
+  const onVlaueChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
   return (
     <>
       <Dialog open={openDialog} PaperProps={{ sx: dialogStyle }}>
@@ -97,13 +102,26 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
           <Close fontSize="small" onClick={(e) => closeComposeMail(e)} />
         </Header>
         <RecipientsWrapper>
-          <InputBase placeholder="Recipients" />
-          <InputBase placeholder="Subject" />
+          <InputBase
+            placeholder="Recipients"
+            name="to"
+            onChange={(e) => onVlaueChange(e)}
+            value={data.to}
+          />
+          <InputBase
+            placeholder="Subject"
+            name="subject"
+            onChange={(e) => onVlaueChange(e)}
+            value={data.subject}
+          />
         </RecipientsWrapper>
         <TextField
           multiline
           rows={25}
           sx={{ "& .MuiOutlinedInput-notchedOutline": { border: "none" } }}
+          name="body"
+          onChange={(e) => onVlaueChange(e)}
+          value={data.body}
         />
         <Footer>
           <SendButton onClick={(e) => sendMail(e)}>Send</SendButton>
