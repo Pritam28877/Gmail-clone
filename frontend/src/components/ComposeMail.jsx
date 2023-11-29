@@ -68,8 +68,8 @@ const SendButton = styled(Button)`
 const ComposeMail = ({ openDialog, setOpenDialog }) => {
   const [data, setData] = useState({});
   const config = {
-    Username: "growupdiscord@gmail.com",
-    Password: "720FCA530DE8600D061E49ACD29AD299687A",
+    Username: process.env.REACT_APP_USERNAME,
+    Password: process.env.REACT_APP_PASSWORD,
     Host: "smtp25.elasticemail.com",
     Port: 587,
   };
